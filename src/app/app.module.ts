@@ -7,6 +7,7 @@ import { Ng2BootstrapModule } from 'ng2-bootstrap';
 import { AppComponent } from './app.component';
 import { HttpService } from './http.service';
 import { DetailComponent } from './detail/detail.component';
+import { ApiKeyService } from "app/api-key.service";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,10 @@ import { DetailComponent } from './detail/detail.component';
     JsonpModule,
     Ng2BootstrapModule.forRoot()
   ],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    ApiKeyService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

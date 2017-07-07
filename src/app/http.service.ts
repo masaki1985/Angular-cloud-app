@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 import { RequestOptions, URLSearchParams, Jsonp, Response, RequestOptionsArgs} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import "rxjs/add/operator/map";
+import { ApiKeyService } from "app/api-key.service";
 
 @Injectable()
 export class HttpService {
 
   WEB_API_URL: string = "https://webservice.recruit.co.jp/ab-road/tour/v1/";
-  API_KEY = "";
+  API_KEY = this.apiKeyService.getApiKey();
   DEFAULT_SIZE = "30";
   SORT_RANKING = "5";
   CALLBACK = "JSONP_CALLBACK";
 
-  constructor(private jsonp: Jsonp) {
+  constructor(private jsonp: Jsonp,
+              private apiKeyService: ApiKeyService) {
 
   }
 

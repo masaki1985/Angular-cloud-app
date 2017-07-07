@@ -40,3 +40,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+src/app/api-key.service.ts
+src/app/api-key.service.spec.ts
