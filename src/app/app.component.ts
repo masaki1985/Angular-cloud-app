@@ -101,6 +101,8 @@ export class AppComponent implements OnInit {
     else {
       this.selectedData = area.data.data;
     }
+    //スクロール位置をリセット
+    setTimeout(scroll(0 ,0), 1);
   }
 
   //ブックマークボタンのクリック時
